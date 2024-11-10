@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";  
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./component/Auth/Login";
 import HomePage from "./component/mainPage/HomePage";
 import AdminHome from "./component/mainPage/pages/AdminHome";
@@ -24,11 +24,10 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Login />} />
 
-      
-
         <Route exact path="/homepage" element={<HomePage />}>
           <Route path="/homepage" element={<AdminHome />}>
             <Route path="onboard" element={<Onboard />} />
+            <Route path="mainleave" element={<MainLeave />} />
             <Route exact path="" element={<Overview />}>
               <Route path="" element={<SubpageRoute />}>
                 <Route path="" element={<Activity />} />
@@ -44,12 +43,10 @@ const App = () => {
             <Route path="calendar" element={<Calender />} />
             <Route path="Profile" element={<Profile />} />
             <Route path="homepage/profile" element={<Profile />} />
-            <Route path="homepage/mainleave" element={<MainLeave />} />
           </Route>
         </Route>
 
-            <Route path="/employeedata" element={<EmployeeData />} />
-   
+        <Route path="/employeedata" element={<EmployeeData />} />
       </Routes>
     </BrowserRouter>
   );
